@@ -1,0 +1,9 @@
+<div>
+<button ng-click="trackClick()"></button>
+	<ul>
+		<li ng-repeat="restaurant in restaurants">
+			<a href="/restaurants/{{restaurant.id}}">{{restaurant.name}}</a>
+			<p>{{restaurant.description}}</p>
+		</li>
+	</ul>
+</div>
