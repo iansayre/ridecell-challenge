@@ -1,3 +1,9 @@
 <div>
-	Here will be the menu for {{ restaurantId }}
+	Here will be the menu for {{ restaurant.name }}
+	<ul>
+		<li ng-repeat="food in restaurant.food">
+			<h4>{{food.name}}</h4>
+			<spand>{{food.price}}</spand>
+		</li>
+	</ul>
 </div>

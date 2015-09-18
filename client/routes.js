@@ -16,7 +16,7 @@ angular.module('foodApp').config(['$urlRouterProvider', '$stateProvider', '$loca
       .state('checkout', {
         url: '/checkout',
         templateUrl: 'client/restaurants/views/checkout.ng.html',
-        controller: 'CheckoutCtrl'
+        controller: 'CheckoutScreenCtrl'
       });
 
       $urlRouterProvider.otherwise('/restaurants');

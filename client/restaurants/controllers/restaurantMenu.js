@@ -1,3 +1,5 @@
-  angular.module('foodApp').controller('MenuCtrl', ['$scope', '$stateParams', function($scope, $stateParams){
-    $scope.restaurantId = $stateParams.restaurantId;
+  angular.module('foodApp').controller('MenuCtrl', ['$scope', '$stateParams', '$meteor', function($scope, $stateParams, $meteor){
+    $scope.restaurant = $meteor.object(Restaurants, $stateParams.restaurantId, false);
+
+    console.log($scope.restaurant.food);
   }]);
