@@ -9,7 +9,7 @@ angular.module('foodApp').config(['$urlRouterProvider', '$stateProvider', '$loca
         controller: 'RestaurantListCtrl'
       })
       .state('restaurantMenu', {
-        url: 'restaurants/:restaurantId',
+        url: '/restaurants/:restaurantId',
         templateUrl: 'client/restaurants/views/restaurant-menu.ng.html',
         controller: 'MenuCtrl'
       })
