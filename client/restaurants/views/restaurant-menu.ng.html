@@ -1,9 +1,37 @@
 <div>
 	Here will be the menu for {{ restaurant.name }}
-	<ul>
-		<li ng-repeat="food in restaurant.food">
-			<h4>{{food.name}}</h4>
-			<spand>{{food.price}}</spand>
-		</li>
-	</ul>
+	<table>
+		<thead>
+			<tr>
+				<th>Item</th>
+				<th>Price</th>
+				<th>Qnt</th>
+				<th>Add to cart?</th>
+			</tr>
+		</thead>
+		<tbody ng-repeat="food in restaurant.food">
+			<tr>
+				<td><h4>{{food.name}}</h4></td>
+				<td><span>${{food.price}}</span></td>
+				<td><input type="number" min="0" class="input prodQty" value="0"></td>
+				<td><button class="btn btn-sm addCart">Add to Cart</button></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form name="timeForm">
+		<select name="timeSelect" id="timeSelect" ng-Model="data.timeSelect">
+			<option value="">Please set a pickup time</option>
+			<option value="12:00">12:00 PM</option>
+			<option value="12:20">12:20 PM</option>
+			<option value="12:40">12:40 PM</option>
+			<option value="1:00">1:00 PM</option>
+			<option value="1:20">1:20 PM</option>
+			<option value="1:40">1:40 PM</option>
+			<option value="2:00">2:00 PM</option>
+			<option value="2:20">2:20 PM</option>
+			<option value="2:40">2:40 PM</option>
+		</select>
+	</form>
+	<button class="btn placeOrder">Place Order</button>
 </div>
