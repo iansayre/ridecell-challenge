@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="alert alert-danger collapse" role="alert"></div>
 	<div class="alert alert-success collapse" role="alert"></div>
-	<table>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Item</th>
@@ -15,15 +15,15 @@
 				<td><h4>{{food.name}}</h4></td>
 				<td><span>${{food.price}}</span></td>
 				<td><input type="number" min="0" id="{{food.name}}-qty" class="input prodQty" value="0"></td>
-				<td><button class="btn btn-sm" ng-click="addToCart()">Add to Cart</button></td>
+				<td><button class="btn btn-primary" ng-click="addToCart()">Add to Cart</button></td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 <div class="row">
-	<div class="col-sm-6 col-md-6 col-lg-6">
+	<div class="col-sm-4 col-md-4 col-lg-4">
 		<form name="timeForm">
-			<select name="timeSelect" id="timeSelect" ng-Model="data.timeSelect">
+			<select name="timeSelect" id="timeSelect" class="form-control" ng-Model="data.timeSelect">
 				<option value="">Please set a pickup time</option>
 				<option value="12:00">12:00 PM</option>
 				<option value="12:20">12:20 PM</option>
@@ -37,7 +37,7 @@
 			</select>
 		</form>
 	</div>
-	<div class="col-sm-6 col-md-6 col-lg-6">
-		<button class="btn placeOrder" ng-click="placeOrder()">Place Order</button>
+	<div class="col-sm-4 col-md-4 col-lg-4">
+		<button class="btn btn-success placeOrder" ng-click="placeOrder()">Place Order</button>
 	</div>
 </div>
