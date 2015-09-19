@@ -11,11 +11,11 @@
 				<th>Price</th>
 			</tr>
 		</thead>
-		<tbody ng-repeat="food in restaurant.food">
+		<tbody ng-repeat="items in order">
 			<tr>
-				<td><h4>{{order.item.}}</h4></td>
-				<td><span>{{order.qty}}</span></td>
-				<td><span>${{order.price}}.00</span></td>
+				<td><h4>{{order.cart.item}}</h4></td>
+				<td><span>{{order.cart.qty}}</span></td>
+				<td><span>${{order.cart.price}}.00</span></td>
 			</tr>
 		</tbody>
 	</table>
