@@ -1,9 +1,8 @@
 angular.module('foodApp').service('OrderService', function() {
-	var order = {},
-		customer, pickupTime = "";
+	var order,customer, pickupTime = "";
 
 	return {
-		getOrder: function(){
+		getFoodOrder: function(){
 			return order;
 		},
 		getCustomer: function(){
@@ -12,14 +11,17 @@ angular.module('foodApp').service('OrderService', function() {
 		getPickupTime: function() {
 			return pickupTime;
 		},
-		setOrder: function(value) {
+		setFoodOrder: function(value) {
 			order = value;
+			console.log('Order set: ' + order);
 		},
 		setCustomer: function(value) {
 			customer = value;
+			console.log('customer set: ' + customer);
 		},
 		setPickupTime: function(value) {
 			pickupTime = value;
+			console.log('time set ' + pickupTime);
 		}
 	};
 });

@@ -32,7 +32,7 @@ angular.module('foodApp').controller('MenuCtrl', ['$scope', '$stateParams', '$me
 			var pickupTime = document.getElementById('timeSelect').value;
 
 			if( pickupTime !== "" && cart.length !== 0 ) {
-				OrderService.setOrder(cart);
+				OrderService.setFoodOrder(cart);
 				OrderService.setCustomer($rootScope.currentUser._id);
 				OrderService.setPickupTime(pickupTime);
 				console.log(cart);
