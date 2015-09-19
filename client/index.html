@@ -1,14 +1,27 @@
 <head>
 	<base href="/">
+	<title>Foodelivery</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="Order food on the go. Pick it up at the cafeteria. Save time">
 </head>
 <body>
-	<div ng-app="foodApp">
-		<blaze-template name="loginButtons"></blaze-template>
-		<h1>
-			<a href="/restaurants">Restaurants</a>
-		</h1>
-
-		<div ui-view></div>
+	<div class="container">
+		<div class="row" ng-app="foodApp">
+			<header class="navbar navbar-default">
+				<div class="container">
+					<div class="navbar-header">
+						<a href="/restaurants" class="navbar-brand">Foodelivery</a>
+					</div>
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="/checkout"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge cart-badge"></span></a></li>
+							<li><blaze-template name="loginButtons"></blaze-template></li>
+						</ul>
+					</div>
+				</div>
+			</header>
+			<div ui-view></div>
+		</div>
 	</div>
 </body>
 

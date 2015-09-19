@@ -1,4 +1,6 @@
-<div>
+<div class="row">
+	<div class="alert alert-danger collapse" role="alert"></div>
+	<div class="alert alert-success collapse" role="alert"></div>
 	<table>
 		<thead>
 			<tr>
@@ -17,20 +19,25 @@
 			</tr>
 		</tbody>
 	</table>
-
-	<form name="timeForm">
-		<select name="timeSelect" id="timeSelect" ng-Model="data.timeSelect">
-			<option value="">Please set a pickup time</option>
-			<option value="12:00">12:00 PM</option>
-			<option value="12:20">12:20 PM</option>
-			<option value="12:40">12:40 PM</option>
-			<option value="1:00">1:00 PM</option>
-			<option value="1:20">1:20 PM</option>
-			<option value="1:40">1:40 PM</option>
-			<option value="2:00">2:00 PM</option>
-			<option value="2:20">2:20 PM</option>
-			<option value="2:40">2:40 PM</option>
-		</select>
-	</form>
-	<button class="btn placeOrder" ng-click="placeOrder()">Place Order</button>
+</div>
+<div class="row">
+	<div class="col-sm-6 col-md-6 col-lg-6">
+		<form name="timeForm">
+			<select name="timeSelect" id="timeSelect" ng-Model="data.timeSelect">
+				<option value="">Please set a pickup time</option>
+				<option value="12:00">12:00 PM</option>
+				<option value="12:20">12:20 PM</option>
+				<option value="12:40">12:40 PM</option>
+				<option value="1:00">1:00 PM</option>
+				<option value="1:20">1:20 PM</option>
+				<option value="1:40">1:40 PM</option>
+				<option value="2:00">2:00 PM</option>
+				<option value="2:20">2:20 PM</option>
+				<option value="2:40">2:40 PM</option>
+			</select>
+		</form>
+	</div>
+	<div class="col-sm-6 col-md-6 col-lg-6">
+		<button class="btn placeOrder" ng-click="placeOrder()">Place Order</button>
+	</div>
 </div>
