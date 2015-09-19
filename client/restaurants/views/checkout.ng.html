@@ -1,3 +1,24 @@
 <div>
-	Checkout will go here.
+	<div>
+		<h2>{{customer}}</h2>
+		<p><span class="bold">Pickup Time:</span> {{pickupTime}}</p>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Item</th>
+				<th>Qty</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody ng-repeat="food in restaurant.food">
+			<tr>
+				<td><h4>{{order.item.}}</h4></td>
+				<td><span>{{order.qty}}</span></td>
+				<td><span>${{order.price}}.00</span></td>
+			</tr>
+		</tbody>
+	</table>
+	<hr>
+	<div>Total: {{total}}</div>
 </div>

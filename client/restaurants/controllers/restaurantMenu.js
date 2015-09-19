@@ -1,29 +1,46 @@
-angular.module('foodApp').controller('MenuCtrl', ['$scope', '$stateParams', '$meteor', function($scope, $stateParams, $meteor){
+angular.module('foodApp').controller('MenuCtrl', ['$scope', '$stateParams', '$meteor', '$rootScope', function($scope, $stateParams, $meteor, $rootScope){
   $scope.restaurant = $meteor.object(Restaurants, $stateParams.restaurantId, false);
 
   var cart = [];
 
   $scope.addToCart = function() {
-    var cartItem = {},
-        item = this.food.name,
-        qty = document.getElementById(item + '-qty').value,
-        price = this.food.price;
+    if( $rootScope.currentUser !== null ){
+
+      var cartItem = {},
+          item = this.food.name,
+          qty = document.getElementById(item + '-qty').value,
+          price = this.food.price;
 
 
-        if( qty > 0 ) {
-          cartItem.item = item;
-          cartItem.qty = qty;
-          cartItem.price = Number(price);
-          cart.push(cartItem);
-        }
-        else {
-          alert("You can't order zero foods");
-        }
+      if( qty > 0 ) {
+        cartItem.item = item;
+        cartItem.qty = qty;
+        cartItem.price = Number(price * qty);
+        cart.push(cartItem);
+      }
+      else {
+        alert("You can't order zero foods");
+      }
 
-        console.log('ITEM: ' + item);
-        console.log('QTY ' + qty);
-        console.log('price ' + price);
+    }
+    else {
+      alert('You must be logged in to place an order');
+    }
+  };
 
+  $scope.placeOrder = function() {
+    if( $rootScope.currentUser !== null ) {
+      var pickupTime = document.getElementById('timeSelect').value;
+
+      if( pickupTime !== "" && cart.length !== 0 ) {
+        $rootScope.$broadcast('orderPlaced', cart, pickupTime, $rootScope.currentUser._id);
         console.log(cart);
+        console.log('pickup time: ' + pickupTime);
+        console.log('currentUser! ' + $rootScope.currentUser._id);
+      }
+      else {
+        alert('You must choose a pickup time before submitting an order.');
+      }
+    }
   };
 }]);
